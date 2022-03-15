@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
   
+  helper_method :logged_in?, :current_user
+
+
   def current_user
     User.find_by(session_token: session[:session_token])
   end
@@ -19,7 +22,7 @@ class ApplicationController < ActionController::Base
       session[:session_token] = user.session_token
       redirect_to user_url(user.id)
     else
-      redirect_to new_user_url
+      redirect_to new_session_url
     end
   end
 

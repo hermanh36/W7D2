@@ -1,0 +1,33 @@
+.box1{
+  display:flex;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  
+}
+#main_title {
+  flex: 1;
+  justify-content: flex-end;
+  color: purple;
+  font-size: 50px;
+  flex-direction: column;
+  text-align: right;
+}
+
+.buttons {
+  background-color: lightsalmon;
+  display:flex;
+  float:right;
+}
+.buttons_right{
+  background-color: lightsalmon;
+}
+
+.sign_ins {
+  flex:1;
+  display:flex;
+  align-content: right;
+  align-items:flex-end;
+  flex-direction: column;;
+}
+

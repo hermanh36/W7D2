@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= stylesheet_link_tag 'style' %>
     <title>MusicApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <div class = "box1">
+    <h1 id="main_title">Music App</h1>
     <%= yield %>
+    <%if logged_in? %>
+    <form action="<%=session_url%>" method="post">
+      <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Logout" class = "buttons">
+    </form>
+    <% end %>
+  </div>
   </body>
 </html>

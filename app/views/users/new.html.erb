@@ -1,13 +1,20 @@
-<form action="<%=users_url %>" method="post">
-<h1>Sign Up</h1>
-<br>
-  <label for="email">Email
-    <input type="text" name="users[email]">
-   </label> 
+<div class = "sign_ins"> 
+  <form action="<%=users_url %>" method="post">
+  <h1>Sign Up</h1>
   <br>
-  <label for="email">Password
-    <input type="password" name="users[password]">
-  </label>
-  <br>
-  <input type="submit" value="Register">
-</form>
+    <label for="email">Email
+      <input type="text" name="users[email]">
+    </label> 
+    <br>
+    <label for="email">Password
+      <input type="password" name="users[password]">
+    </label>
+    <br>
+    <input type="submit" value="Register" class="buttons">
+    </form>
+    <% if !logged_in? %>
+      <form action="<%=new_session_url%>" method="get">
+        <input type="submit" value="Login" class = "buttons">
+      </form>
+    <% end %>
+  </div>
